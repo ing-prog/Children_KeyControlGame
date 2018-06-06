@@ -21,18 +21,28 @@ window.onload = function() {
         }
     };
 
+    let a = 65;
+    let z = 90;
+    let gameKeyNumber = -1;
+    let pressedOK = true;
+
     // game function
     function gameProcess() {
-
+        if(pressedOK === true) {
+            pressedOK = false;
+            let keyRandomValue = parseInt(Math.random() * 10000) % (z - a) + a;
+            gameKeyNumber = keyRandomValue;
+            let char = String.fromCharCode(keyRandomValue);
+            keyLabel.innerHTML = char;
+            console.log("Generate char: " + char);
+        }
     }
 
     // add key down event
     window.onkeydown = function(event) {
-
-    };
-
-    // add key up event
-    window.onkeyup = function(event) {
-
+        let keyNumber = event.keyCode;
+        if(keyNumber === gameKeyNumber) {
+            pressedOK = true;
+        }
     };
 };

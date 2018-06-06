@@ -24,16 +24,25 @@
             cursor: pointer;
             background: #ffa136;
         }
+
+        .keyLabelClass {
+            padding: 15px;
+            background: #CCCCCC;
+            border: 2px solid #000000;
+            font-size: 30px;
+        }
     </style>
 </head>
 <body>
 
 <h1>Keys Control Game</h1>
 
+<br>
+
 <button id = "startGameBtn" class = "startButtonClass">Начать игру</button>
 
 <div id = "gameContentBox" hidden>
-    <h2 id = "keyLabel"></h2>
+    <span id = "keyLabel" class = "keyLabelClass"></span>
 </div>
 
 <script src = "gameCode.js"></script>
