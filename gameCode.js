@@ -8,6 +8,9 @@ window.onload = function() {
     let timeLabel = document.getElementById("timeLabel");
     let scoreLabel = document.getElementById("scoreLabel");
 
+    // game started  flag
+    let gameFlag = false;
+
     // start score value
     let score = 0;
 
@@ -25,6 +28,9 @@ window.onload = function() {
         if(buttonPressed === false) {
             // make button pushed
             buttonPressed = true;
+
+            // set game flag to started
+            gameFlag = true;
 
             // hide button
             startGameBtn.hidden = true;
@@ -48,6 +54,8 @@ window.onload = function() {
                     // clear timers
                     clearInterval(gameInterval);
                     clearInterval(secondsInterval);
+                    // stop game
+                    gameFlag = false;
                 }
             }, 1000);
         }
@@ -81,16 +89,20 @@ window.onload = function() {
 
     // add key down event
     window.onkeydown = function(event) {
-        // get number of key
-        let keyNumber = event.keyCode;
-        // if key correct
-        if(keyNumber === gameKeyNumber) {
-            // set pressed OK
-            pressedOK = true;
-            // add score
-            score++;
-            // print score
-            scoreLabel.innerHTML = score;
+        if(gameFlag === true) {
+            // get number of key
+            let keyNumber = event.keyCode;
+            // if key correct
+            if (keyNumber === gameKeyNumber) {
+                // set pressed OK
+                pressedOK = true;
+                // add score
+                score++;
+                // print score
+                scoreLabel.innerHTML = score;
+            }
+        } else {
+            console.log("Game Finished");
         }
     };
 };
