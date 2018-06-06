@@ -56,6 +56,8 @@ window.onload = function() {
                     clearInterval(secondsInterval);
                     // stop game
                     gameFlag = false;
+                    // result
+                    gameContentBox.innerHTML = "<h1>" + "Результат: " + score +"</h1>";
                 }
             }, 1000);
         }
