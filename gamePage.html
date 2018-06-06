@@ -10,13 +10,27 @@
             font-family: Geneva, Arial, Helvetica, sans-serif;
             font-size: 20px;
         }
+
+        .startButtonClass {
+            outline: none;
+            font-family: Geneva, Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            padding: 10px;
+            background: #ffd43f;
+            border: 2px solid #000000;
+        }
+
+        .startButtonClass:hover {
+            cursor: pointer;
+            background: #ffa136;
+        }
     </style>
 </head>
 <body>
 
 <h1>Keys Control Game</h1>
-<br>
-<br>
+
+<button id = "startGameBtn" class = "startButtonClass">Начать игру</button>
 
 <h2 id = "keyLabel"></h2>
 
